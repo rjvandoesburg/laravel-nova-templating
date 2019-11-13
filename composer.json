@@ -1,0 +1,35 @@
+{
+    "name": "rjvandoesburg/laravel-nova-templating",
+    "description": "Load templates based on models & resources",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "templating"
+    ],
+    "authors": [
+        {
+            "name": "Robert-John van Doesburg",
+            "email": "rjvandoesburg@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "~5.8||^6.0",
+        "laravel/nova": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rjvandoesburg\\NovaTemplating\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rjvandoesburg\\NovaTemplating\\NovaTemplatingServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
