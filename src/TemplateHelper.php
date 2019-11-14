@@ -13,12 +13,11 @@ class TemplateHelper
      * @param  \Laravel\Nova\Resource  $resource
      *
      * @return array
-     * @throws \ReflectionException
      */
     public function forResource(\Laravel\Nova\Resource $resource): array
     {
-        $resourceName = Str::slug((new \ReflectionClass($resource))->getShortName());
-        $modelName = Str::slug((new \ReflectionClass($resource->resource))->getShortName());
+        $resourceName = Str::slug(class_basename($resource));
+        $modelName = Str::slug(class_basename($resource->resource));
 
         if ($resourceName !== $modelName) {
             return [
