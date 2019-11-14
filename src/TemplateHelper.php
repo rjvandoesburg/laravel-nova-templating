@@ -3,9 +3,12 @@
 namespace Rjvandoesburg\NovaTemplating;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
 
 class TemplateHelper
 {
+    use Macroable;
+
     /**
      * @param  \Laravel\Nova\Resource  $resource
      *

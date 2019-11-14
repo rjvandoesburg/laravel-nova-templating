@@ -2,11 +2,13 @@
 
 namespace Rjvandoesburg\NovaTemplating\Http\Controllers\Api;
 
+use Illuminate\Routing\Controller;
+use Laravel\Nova\Http\Middleware\DispatchServingNovaEvent;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Rjvandoesburg\NovaTemplating\Contracts\Templatable;
 use Rjvandoesburg\NovaTemplating\TemplateHelper;
 
-class TemplateController
+class TemplateController extends Controller
 {
     /**
      * @var \Rjvandoesburg\NovaTemplating\TemplateHelper
@@ -21,6 +23,8 @@ class TemplateController
     public function __construct(TemplateHelper $templateHelper)
     {
         $this->templateHelper = $templateHelper;
+
+        $this->middleware(DispatchServingNovaEvent::class);
     }
 
     /**

@@ -20,7 +20,6 @@ class NovaTemplatingServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Load the nova resources because we need them when rendering the template
-        \Nova::resourcesIn(app_path('Nova'));
+        //
     }
 }
